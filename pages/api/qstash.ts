@@ -11,11 +11,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({ name: "John Doe", body: req.body });
 }
 
-export default verifySignature(handler, {
-  currentSigningKey: "sig_6QJLULeiJf6La81Nf86hNFXJpNWd",
-  nextSigningKey: "sig_5qnYiBNjHJNYHYHJRe7dXKctfgGN",
-  url: "http://localhost:3000/api/qstash", // omit this when you deploy
-});
+export default verifySignature(handler);
 
 export const config = {
   api: {
